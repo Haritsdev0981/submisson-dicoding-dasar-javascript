@@ -29,7 +29,6 @@ function minimal(a, b) {
             break
             case b < a :
                 b
-                break
                 default :
                 a
     }
