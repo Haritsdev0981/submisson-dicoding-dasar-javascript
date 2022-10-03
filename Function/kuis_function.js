@@ -31,7 +31,7 @@ function minimal(a, b) {
     // } else {
     //     return a;
     // }
-    return Math.min(a, b)
+    return Math.min(a, b) //default operator from js
 }
 
 console.log(minimal(1, 4))
