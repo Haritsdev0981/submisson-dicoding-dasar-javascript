@@ -22,22 +22,31 @@
 
 
 // TODO
+
 function minimal(a, b) {
-    switch(a, b){
-        case a < b :
-            a
-            break
-            case b < a :
-                b
-                default :
-                a
-    }
-    return a, b
+    // if (a < b) {
+    //     return a;
+    // } else if (b < a) {
+    //     return b;
+    // } else {
+    //     return a;
+    // }
+    return Math.min(a, b)
 }
 
 console.log(minimal(1, 4))
 console.log(minimal(3, 2))
 console.log(minimal(3, 3))
+
+function power(a, b){
+    return Math.pow(a, b)
+    // return a ** b
+}
+
+console.log(power(7, 3))
+console.log(power(3, 3))
+console.log(power(4, 0.5))
+
 /**
  * Jangan hapus kode di bawah ini
  */
