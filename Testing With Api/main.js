@@ -9,7 +9,7 @@ fetch(endpoint, {
         "Content-Type": "application/json",
     },
     body: JSON.stringify({
-        text: "kurakurakura"
+        text: "kurakurakura"cc
     }),
 })
     .then((result) => result.json())
