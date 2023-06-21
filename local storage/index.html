@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <img id="image" src="blank-image.png" alt="blank image when image is null">
+    </div>
+    <input type="file" id="inImg">
+    <button id="btnDelete">Delete Image</button>
+    <script>
+        var fileInput = document.getElementById('inImg')
+        var img = document.getElementById('image')
+        var deleteButton = document.getElementById('btnDelete');
+        
+        // fileInput.addEventListener('change', (e)=>{
+        //     img.src = URL.createObjectURL(e.target.files[0])
+        // })
+
+        // Load image from local storage on page load
+        window.addEventListener('load', () => {
+            var savedImage = localStorage.getItem('savedImage');
+            if (savedImage) {
+                img.src = savedImage;
+            }
+        });
+
+        // Set image source and save to local storage on file selection
+        fileInput.addEventListener('change', (e) => {
+            var selectedFile = e.target.files[0];
+            var fileReader = new FileReader();
+            fileReader.onload = function(event) {
+                img.src = event.target.result;
+                localStorage.setItem('savedImage', event.target.result);
+            };
+            fileReader.readAsDataURL(selectedFile);
+        });
+
+        // Delete image and remove from local storage
+        deleteButton.addEventListener('click', () => {
+            img.src = 'blank-image.png';
+            localStorage.removeItem('savedImage');
+        });
+        
+    </script>
+</body>
+</html>
